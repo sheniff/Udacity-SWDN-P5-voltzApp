@@ -1,0 +1,143 @@
+$pixels: 75 70 65 60 55 50 45 40 35 30 25 20 15 10 5 0;
+
+@each $number in $pixels {
+  $positions: l t b r;
+  $position-names: left top bottom right;
+  $rtl-position-names: right top bottom left;
+  $name: if($number == 0, 'n', $number);
+
+  .m#{$name} {
+    margin: #{$number}px !important;
+  }
+
+  .p#{$name} {
+    padding: #{$number}px !important;
+  }
+
+  @each $position in $positions {
+    $i: index($positions, $position);
+    $name: if($number == 0, 'n', $number);
+
+    @if $dir == rtl {
+      $property: nth($rtl-position-names, $i);
+    } @else {
+      $property: nth($position-names, $i);
+    }
+
+    .m#{$position}#{$name}{
+      margin-#{$property}: #{$number}px !important;
+    }
+
+    .p#{$position}#{$name}{
+      padding-#{$property}: #{$number}px !important;
+    }
+  }
+}
+
+$size: 50 75 100 125 150 175 200 225 250 275 300 325 350 375 400 425 450 475 500 525 550 575 600;
+
+@each $number in $size {
+  .w#{$number} {
+    min-width: #{$number}px !important;
+    width: #{$number}px !important;
+  }
+
+  .h#{$number} {
+    height: #{$number}px !important;
+    min-height: #{$number}px !important;
+  }
+}
+
+.align-left {
+  text-align: $left !important
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.align-right {
+  text-align: $right !important;
+}
+
+.left {
+  float: $left;
+}
+
+.right {
+  float: $right;
+}
+
+.abs {
+  position: absolute;
+}
+
+.rel {
+  position: relative;
+}
+
+.clickable,
+.hand {
+  cursor: pointer;
+}
+
+.flex-box {
+  @include display-flex;
+}
+
+.overflow-y-scroll {
+  overflow-y: auto !important;
+}
+
+.inline {
+  @include inline-block;
+}
+
+.mute {
+  color: #eee !important;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.lcase {
+  text-transform: lowercase;
+}
+
+.ucase {
+  text-transform: uppercase;
+}
+
+.rounded-corners {
+  @include border-radius($border-radius-base);
+}
+
+.wrap {
+  white-space: pre-wrap;
+}
+
+.icon-xlarge {
+  font-size: 60px;
+}
+
+.icon-xxlarge {
+  font-size: 100px;
+}
+
+.columns {
+  clear: both;
+  @extend .clearfix;
+
+  &.two {
+    .column {
+      float: $left;
+      width: 50%;
+    }
+  }
+}
+
+.white-bg {
+  background-color: $white;
+}
+

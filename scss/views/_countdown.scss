@@ -1,0 +1,59 @@
+#plugCountdown {
+  color: #fff;
+
+  // general animation
+  *.ng-hide-remove {
+    display: block !important;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-in;
+    -webkit-transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  *.ng-hide {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+
+  .counter {
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    text-align: center;
+
+    .time {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  countdown {
+    background: rgba(0,0,0,.1);
+    margin: 10%;
+    @include border-radius(100%);
+
+    &.ng-hide-remove {
+      @include transition-delay(.1s);
+    }
+  }
+
+  .station-info {
+    text-align: center;
+    margin-top: 10px;
+
+    &.ng-hide-remove {
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+  }
+}

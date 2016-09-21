@@ -1,0 +1,64 @@
+<ion-view>
+  <ion-content>
+    <!-- New Report -->
+    <div id="newReport" class="card">
+      <div class="item item-text-wrap">
+        <div on-tap="startReport()">
+          Report new incident
+          <small class="positive" ng-hide="newReport">
+            (tap to start)
+          </small>
+        </div>
+
+        <form ng-submit="createReport()" ng-show="newReport">
+          <div class="picture" on-tap="takePicture()">
+            <span class="tap2pic" ng-show="!newReport.picture">Tap to take a picture</span>
+            <img class="full-image" ng-src="{{ newReport.picture || 'http://static1.pakwheels.com/assets/default-display-image-car-638815e7606c67291ff77fd17e1dbb16.png' }}">
+          </div>
+          <label class="item item-input">
+            <textarea rows="4" ng-model="newReport.message" placeholder="What happened?"></textarea>
+          </label>
+          <button type="submit" class="button button-block button-assertive">
+            Report
+          </button>
+          <button type="text" on-tap="clearReport()" class="button button-block button-outline button-assertive button-small">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list card" ng-repeat="report in reports">
+
+      <div class="item item-avatar">
+        <img ng-src="{{ report.reporter.avatar }}">
+        <h2>{{ report.reporter.username || report.reporter.id }}</h2>
+        <p>{{ report.date | date:'medium' }}</p>
+      </div>
+
+      <div class="item item-body">
+        <img ng-show="report.picture" class="full-image" ng-src="{{ report.picture }}">
+        <p>
+          {{ report.message }}
+        </p>
+        <p>
+          <a href="#" class="subdued">5 Agreed!</a>
+          <a href="#" class="subdued">1 Not that bad...</a>
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-thumbsup"></i>
+          Agreed!
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-thumbsdown"></i>
+          You're overreacting...
+        </a>
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-view>

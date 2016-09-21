@@ -1,0 +1,43 @@
+<!--
+  ToDo:
+
+  - Show user BY id
+  - Show last user charge (if available, with a link to 'charge now')
+  - Show editable info about the car
+  - Show logout option
+ -->
+<ion-view id="account">
+  <ion-content>
+    <form name="accountForm" ng-submit="accountForm.$valid && accountForm.$dirty && update(accountForm)">
+
+      <ion-item class="text-center">
+        <img ng-src="{{ user.image }}" alt="userpic">
+        <br>
+        <strong ng-show="user.username">{{ user.username }}</strong>
+        <br>
+        <small>{{ user.id }}</small>
+      </ion-item>
+
+      <label class="item item-input">
+        <span class="input-label">User Name</span>
+        <input type="text" ng-model="user.username">
+      </label>
+
+      <ion-toggle
+        ng-model="demo.mode"
+        toggle-class="toggle-calm">
+        Demo Mode
+      </ion-toggle>
+
+      <button
+        class="button button-full button-calm"
+        ng-class="{ 'button-outline': accountForm.$invalid || accountForm.$pristine }"
+        ng-disabled="accountForm.$invalid || accountForm.$pristine"
+        type="submit">
+        Save
+      </button>
+
+    </form>
+
+  </ion-content>
+</ion-view>

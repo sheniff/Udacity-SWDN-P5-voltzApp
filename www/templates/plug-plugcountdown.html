@@ -1,0 +1,35 @@
+<ion-view cache-view="false">
+  <ion-pane class="padding" id="plugCountdown">
+
+    <h2 class="title mt20" ng-show="status.station">
+      <small>You've been assigned a station</small><br/>
+      <span>{{ status.station.name }}</span>
+    </h2>
+
+    <countdown progress="time / totalTime" ng-show="time">
+      <div class="counter">
+        <div>You have</div>
+        <span class="time">{{ time * 1000 | date:'mm:ss' }}</span>
+        <div class="mt5">to plug in your car</div>
+      </div>
+    </countdown>
+
+    <p class="station-info mt20 mb20" ng-show="time && !status.station.location.name">
+      <strong>{{ status.station.location }}</strong>
+    </p>
+
+    <p class="station-info mt20 mb20" ng-show="time && status.station.location.name">
+      <strong>{{ status.station.location.name }}</strong>
+      <br>
+      {{ status.station.location.address }}
+      <br>
+      {{ status.station.location.city }}, {{ status.station.location.state }} {{ status.station.location.zipcode }}
+    </p>
+
+    <div class="ml20 mr20">
+      <button class="button button-outline-alt button-block" ng-show="time">
+        Need more time. Give up your spot.
+      </button>
+    </div>
+  </ion-pane>
+</ion-view>

@@ -1,0 +1,54 @@
+#plug-view {
+
+  // &:before {
+  //   background: linear-gradient(180deg, rgba(125, 152, 245, .4) 0%, rgba(125, 152, 245, .8) 100%);
+  //   content: " ";
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   top: 0;
+  // }
+}
+
+#plugMeButton {
+  color: #fff;
+  text-align: center;
+  margin-top: 200px;
+
+  i {
+    border: 10px solid transparent;
+    border-radius: 100px;
+    display: block;
+    font-size: 100px;
+    height: 150px;
+    line-height: 130px;
+    margin: auto;
+    width: 150px;
+    @include transition-duration(.5s, .5s, .5s, .5s, 1.25s);
+    @include transition-delay(0s, .15s, .3s, .45s, 0s);
+    @include transition-property(border-left-color, border-top-color, border-right-color, border-bottom-color, transform);
+
+    &.tapped {
+      border-top-color: #fff;
+      border-left-color: #fff;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    -webkit-transition: 0.3s ease-in all;
+    transition: 0.3s ease-in all;
+
+    /* remember to add this */
+    display: block!important;
+    opacity: 1;
+  }
+  &.ng-hide {
+    opacity: 0;
+    -webkit-transform: scale(4);
+  }
+}

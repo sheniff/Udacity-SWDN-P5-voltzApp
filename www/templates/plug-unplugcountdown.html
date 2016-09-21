@@ -1,0 +1,49 @@
+<ion-view cache-view="false">
+  <ion-pane class="padding" id="unplugCountdown">
+
+    <h2 class="title" ng-show="status.station">
+      Your car is fully charged!
+    </h2>
+
+    <div ng-show="status.station">
+      <div class="karma ion-heart{{ time < 0 ? '-broken' : '' }}">{{ karma }}</div>
+      <div class="progress">
+        <!-- Style this bar inverted to seem like it discounts from left to right -->
+        <progress class="positive" max="{{ maxKarma }}" value="{{ karma < 0 ? maxKarma : maxKarma - karma }}"> </progress>
+        <progress class="negative" max="{{ minKarma }}" value="{{ karma < 0 ? absKarma : 0 }}"> </progress>
+        <i class="icon ion-ios-star" style="text-align: left;"></i>
+        <i class="icon ion-ios-star-half"></i>
+        <i class="icon ion-ios-star-outline" style="text-align: right;"></i>
+      </div>
+    </div>
+
+    <div class="counter" ng-show="status.station">
+      <div>
+        You have
+      </div>
+      <span class="time"><span ng-show="time < 0">-</span>{{ absTime * 1000 | date:'mm:ss' }}</span>
+      <div>
+        minutes left to move your car.
+      </div>
+    </div>
+
+    <p class="station-info" ng-show="status.station && !status.station.location.name">
+      Remember! Your car is at:
+      <br>
+      <strong>{{ status.station.location }}</strong>
+    </p>
+
+    <p class="station-info" ng-show="status.station && status.station.location.name">
+      Remember! Your car is at:
+      <br>
+      <strong>{{ status.station.location.name || status.station.location }}</strong>
+      <br>
+      {{ status.station.location.address }}
+      <br>
+      zipcode {{ status.station.location.zipcode }}
+      <br>
+      {{ status.station.location.city }} {{ status.station.location.state }}
+    </p>
+
+  </ion-pane>
+</ion-view>

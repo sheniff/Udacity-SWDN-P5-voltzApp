@@ -1,0 +1,48 @@
+#linePosition {
+  color: #fff;
+  text-align: center;
+  margin-top: 160px;
+
+  .current-position {
+    font-size: 150px;
+    line-height: 100px;
+  }
+
+  .total-requests {
+    font-size: 70px;
+    opacity: 0.3;
+  }
+
+  .progress {
+    margin-top: 60px;
+
+    progress[value] {
+      width: 40%;
+      height: 2px;
+      -webkit-appearance: none;
+      appearance: none;
+      position: relative;
+
+      &::-webkit-progress-bar {
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 2px;
+      }
+
+      &::-webkit-progress-value {
+        border-radius: 2px;
+        transition: 0.5s ease-in-out width;
+        background-color: #fff;
+      }
+    }
+
+    i, progress {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    i {
+      font-size: 40px;
+      padding: 0 20px;
+    }
+  }
+}

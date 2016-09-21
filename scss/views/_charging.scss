@@ -1,0 +1,51 @@
+#charging {
+  h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .wrapper {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+
+    .icon {
+      color: #fff;
+      display: block;
+      font-size: 220px;
+      line-height: 220px;
+      @include animation(beat 2s ease-in-out infinite alternate);
+    }
+
+    .border {
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 100%;
+      width: 220px;
+      height: 220px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -110px;
+      @include animation(rotate 3s ease-in-out infinite alternate);
+
+      &:before {
+        color: #fff;
+        content: "•";
+        font-family: "Helvetica";
+        font-size: 40px;
+        position: absolute;
+        right: 25%;
+        text-shadow: 0 0 40px $blue;
+        @include border-radius(100%);
+      }
+    }
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+  }
+}

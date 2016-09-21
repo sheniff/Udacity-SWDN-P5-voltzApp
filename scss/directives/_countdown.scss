@@ -1,0 +1,23 @@
+countdown {
+  color: #fff;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+
+  svg {
+    margin: 0 auto;
+  }
+
+  .progress-radial {
+    display: block;
+    position: relative;
+  }
+
+  .progress-radial-track {
+    fill: rgba(255,255,255, .3);
+  }
+
+  .progress-radial-bar {
+    fill: #fff;
+  }
+}

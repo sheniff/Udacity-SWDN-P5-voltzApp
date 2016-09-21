@@ -1,0 +1,29 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+  <ion-pane class="padding">
+
+    <div id="linePosition">
+      <div>
+        <span class="current-position">{{ line.current + 1 }}</span>
+        <span class="total-requests">/{{ line.total }}</span>
+      </div>
+
+      <div ng-show="line.current > 0" class="mt20">
+        {{ line.current }}
+        <span ng-if="line.current === 1">person</span>
+        <span ng-if="line.current !== 1">people</span>
+        ahead of you.
+      </div>
+
+      <div ng-show="line.current === 0" class="mt20">
+        You're the next one!
+      </div>
+
+      <div class="progress">
+        <i class="icon ion-model-s"></i>
+        <progress max="{{ line.total }}" value="{{ line.total - line.current }}"> </progress>
+        <i class="icon ion-outlet"></i>
+      </div>
+    </div>
+
+  </ion-pane>
+</ion-view>

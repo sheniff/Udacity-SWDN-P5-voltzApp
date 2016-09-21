@@ -1,0 +1,11 @@
+<ion-view cache-view="false">
+  <ion-pane>
+    <div id="plugMeButton" ng-hide="hideButton">
+      <i class="icon ion-outlet"
+        ng-class="{ tapped: tapped }"
+        on-touch="hold()"
+        on-release="release()"></i>
+      <p>Hold the socket to request a plug.</p>
+    </div>
+  </ion-pane>
+</ion-view>

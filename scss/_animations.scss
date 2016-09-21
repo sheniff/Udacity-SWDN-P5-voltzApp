@@ -1,0 +1,242 @@
+@include keyframes(fade) {
+  from {
+    @include opacity(1);
+  }
+  to {
+    @include opacity(0);
+  }
+}
+
+@include keyframes(flipInX) {
+  0% {
+    @include opacity(0);
+    @include transform(perspective(400px) rotateX(90deg));
+  }
+  40% {
+    @include transform(perspective(400px) rotateX(-10deg));
+  }
+  70% {
+    @include transform(perspective(400px) rotateX(10deg));
+  }
+  100% {
+    @include opacity(1);
+    @include transform(perspective(400px) rotateX(0deg));
+  }
+}
+
+@include keyframes(flipInY) {
+  0% {
+    @include opacity(0);
+    @include transform(perspective(400px) rotateY(90deg));
+  }
+  40% {
+    @include transform(perspective(400px) rotateY(-10deg));
+  }
+  70% {
+    @include transform(perspective(400px) rotateY(10deg));
+  }
+  100% {
+    @include opacity(1);
+    @include transform(perspective(400px) rotateY(0deg));
+  }
+}
+
+@include keyframes(flipOutX) {
+  0% {
+    @include opacity(1);
+    @include transform(perspective(400px) rotateX(0deg));
+  }
+  100% {
+    @include opacity(0);
+    @include transform(perspective(400px) rotateX(90deg));
+  }
+}
+
+@include keyframes(flipOutY) {
+  0% {
+    @include opacity(1);
+    @include transform(perspective(400px) rotateY(0deg));
+  }
+  100% {
+    @include opacity(0);
+    @include transform(perspective(400px) rotateY(90deg));
+  }
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    @include opacity(0);
+  }
+
+  100% {
+    @include opacity(1);
+  }
+}
+
+@include keyframes(fadeOut) {
+  0% {
+    @include opacity(1);
+  }
+
+  100% {
+    @include opacity(0);
+  }
+}
+
+@include keyframes(rotate) {
+  0% {
+    @include transform(rotateZ(-360deg));
+  }
+
+  100% {
+    @include transform(rotateZ(0deg));
+  }
+}
+
+@include keyframes(slideInLeft) {
+  0% {
+    @include opacity(0);
+    @include transform(translateX(-2000px));
+  }
+  100% {
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(slideInRight) {
+  0% {
+    @include opacity(0);
+    @include transform(translateX(2000px));
+  }
+  100% {
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(slideInUp) {
+  0% {
+    @include transform(translateY(-100%));
+  }
+  100% {
+    @include transform(translateY(100%));
+  }
+}
+
+@include keyframes(slideOutDown) {
+  0% {
+    @include transform(translateX(100%));
+  }
+  100% {
+    @include transform(translateX(-100%));
+  }
+}
+
+@include keyframes(subtleFadeInUp) {
+  0% {
+    @include opacity(0);
+    @include transform(translateY(15%));
+  }
+
+  100% {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(subtleFadeOutDown) {
+  0% {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+
+  100% {
+    @include opacity(0);
+    @include transform(translateY(15%));
+  }
+}
+
+@include keyframes(subtleFadeInDown) {
+  0% {
+    @include opacity(0);
+    @include transform(translateY(-15%));
+  }
+
+  100% {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(subtleFadeOutUp) {
+  0% {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+
+  100% {
+    @include opacity(0);
+    @include transform(translateY(-15%));
+  }
+}
+
+@include keyframes(spinZ) {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(200deg);
+    transform: rotateZ(200deg);
+  }
+}
+
+@include keyframes(beat) {
+  from {
+    text-shadow: 0 0 15px darken(#7b4397, 25%);
+  }
+
+  to {
+    text-shadow: 0 0 80px lighten(#7b4397, 25%);
+  }
+}
+
+@include keyframes(glow) {
+  from {
+    color: 0 0 15px darken(#7b4397, 25%);
+  }
+
+  to {
+    color: 0 0 80px lighten(#7b4397, 25%);
+  }
+}
+
+@include keyframes(heartbeat) {
+  0% {
+    @include scale(1);
+  }
+
+  25% {
+    @include scale(1.1); text-shadow: 0 0 0 10px #fff; color: #c00;
+  }
+
+  50% {
+    @include scale(1);
+  }
+}
+
+@include keyframes(heartbeat2) {
+  0% {
+    @include scale(1);
+  }
+
+  25% {
+    @include scale(1.1); text-shadow: 0 0 0 10px #000; color: #666;
+  }
+
+  50% {
+    @include scale(1);
+  }
+}
+
+

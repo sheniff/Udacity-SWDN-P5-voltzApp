@@ -1,0 +1,14 @@
+{
+  "name": "voltz",
+  "app_id": "5851ff70",
+  "gulpStartupTasks": [
+    "sass",
+    "templatecache",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "documentRoot": "www"
+}

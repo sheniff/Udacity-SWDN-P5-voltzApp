@@ -1,0 +1,49 @@
+.tab-view {
+  ion-list {
+    .item:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.tabs-icon-top {
+  .tab-nav {
+    background-color: rgba(0,0,0, .1);
+    background-size: 100% 0;
+    padding-top: 0;
+
+    .tab-item {
+      height: 45px;
+      margin: 2px;
+      max-width: 100px;
+      @include border-radius($border-radius-base);
+
+      i, span {
+        color: #999;
+      }
+
+      .tab-title {
+        display: block;
+        margin-top: -4px;
+      }
+
+      i {
+        font-size: 24px;
+        padding-top: 5px;
+
+        &.icon-grid,
+        &.icon-calendar-day-planner {
+          font-size: 21px;
+          padding-top: 6px;
+        }
+      }
+
+      &.tab-item-active {
+
+        i, span {
+          color: $white;
+        }
+      }
+    }
+  }
+}

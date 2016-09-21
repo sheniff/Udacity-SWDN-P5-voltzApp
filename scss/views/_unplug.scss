@@ -1,0 +1,105 @@
+#unplugCountdown {
+  color: #fff;
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .karma {
+    font-size: 70px;
+    line-height: 70px;
+    text-align: center;
+
+    &:before {
+      width: 80px;
+    }
+
+    &:after {
+      content: "karma pts.";
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    &.ion-heart:before {
+      font-size: 50px;
+      vertical-align: middle;
+      line-height: 50px;
+      -webkit-animation: heartbeat 2s infinite;
+    }
+
+    &.ion-heart-broken:before {
+      font-size: 50px;
+      vertical-align: middle;
+      line-height: 50px;
+      -webkit-animation: heartbeat2 2s infinite;
+    }
+  }
+
+  .progress {
+    // margin-top: 60px;
+
+    progress[value] {
+      width: 50%;
+      height: 2px;
+      margin: 5px 0;
+      -webkit-appearance: none;
+      appearance: none;
+      position: relative;
+      float: left;
+
+      &::-webkit-progress-bar {
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 2px;
+      }
+
+      &::-webkit-progress-value {
+        border-radius: 2px;
+        transition: 0.5s ease-in-out width;
+        background-color: #fff;
+      }
+
+
+      &.positive::-webkit-progress-bar {
+        background-color: #fff;
+      }
+
+      &.positive::-webkit-progress-value {
+        background-color: rgba(27,82,62,0.7);
+      }
+
+      &.negative::-webkit-progress-value {
+        background-color: #f00;
+      }
+    }
+
+    i, progress {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    i {
+      font-size: 20px;
+      line-height: 20px;
+      float: left;
+      width: 33.333%;
+      text-align: center;
+    }
+  }
+
+  .counter {
+    text-align: center;
+    margin-top: 70px;
+
+    .time {
+      font-size: 70px;
+      line-height: 70px;
+    }
+  }
+
+  .station-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
